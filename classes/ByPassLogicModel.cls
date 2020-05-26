@@ -10,20 +10,9 @@ public
 class ByPassLogicModel {
     private static Bypass_Settings__c settingInstance = Bypass_Settings__c.getInstance();
 
-    /**
-* @description Method checks for custom setting data related to trigger
-* bypass for Contact Address object.
-* @return Boolean
-* @example
-* Boolean isContactAddressTriggerByPassed = ByPassLogicModel.isContactAddressTriggerByPassed();
-* This will return true if custom setting checkbox Is_Contact_Address_Trigger_Bypassed__c is checked.
-*/
-    public static Boolean isContactAddressTriggerByPassed() {
-        return settingInstance != null && settingInstance.Is_Contact_Address_Trigger_Bypassed__c;
-    }
-    
 
-        /**
+
+/**
 * @description Method checks for custom setting data related to trigger
 * bypass for Platform Event Log object.
 * @return Boolean
