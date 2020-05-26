@@ -2,7 +2,7 @@
 * @group TestBuilder
 * @description Test class to cover ByPassLogicModel class.
 * @author Vamsi Velampati (vvelampati@deloitte.com)
-* @date 05/04/2020
+* @date 05/25/2020
 * @version 1.0
 */
 @isTest public class ByPassLogicModelTest {
