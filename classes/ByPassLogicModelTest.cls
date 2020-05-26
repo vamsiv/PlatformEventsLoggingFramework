@@ -13,7 +13,7 @@
 */
     @testSetup public static void setupData() {
         new TestBypassSettingBuilder()
-            .setIsContactAddressBypassed(false)
+            .setIsPlatformEventTriggerBypassed(false)
             .setSetupOwnerId(userInfo.getUserId())
             .buildAndSave();
     }
@@ -24,7 +24,7 @@
     public
         static testmethod void testCustomSettingWithTrueValue() {
             new TestBypassSettingBuilder()
-                .setIsContactAddressBypassed(false)
+                .setIsPlatformEventTriggerBypassed(false)
                 .setSetupOwnerId(userInfo.getUserId())
                 .buildAndSave();
             Test.startTest();
@@ -38,11 +38,11 @@
     public
         static testmethod void userByPasssShouldByPassContactAddressTrigger() {
             new TestBypassSettingBuilder()
-                .setIsContactAddressBypassed(true)
+                .setIsPlatformEventTriggerBypassed(true)
                 .setSetupOwnerId(userInfo.getUserId())
                 .buildAndSave();
             Test.StartTest();
-            System.assertEquals(true, ByPassLogicModel.isContactAddressTriggerByPassed(), 'Contact Address Trigger should be Disabled');
+            System.assertEquals(true, ByPassLogicModel.setIsPlatformEventTriggerBypassed(), 'Platform Event Trigger should be Disabled');
             Test.StopTest();
         }
     
@@ -52,11 +52,11 @@
     public
         static testmethod void profileByPassAccountShouldByPassAccountTrigger() {
             new TestBypassSettingBuilder()
-                .setIsContactAddressBypassed(true)
+                .setIsPlatformEventTriggerBypassed(true)
                 .setSetupOwnerId(userInfo.getProfileId())
                 .buildAndSave();
             Test.StartTest();
-            System.assertEquals(true, ByPassLogicModel.isContactAddressTriggerByPassed(), 'Account Trigger should be Disabled');
+            System.assertEquals(true, ByPassLogicModel.setIsPlatformEventTriggerBypassed(), 'Platform Event Trigger should be Disabled');
             Test.StopTest();
         }
     
@@ -68,11 +68,11 @@
 */
     static testmethod void byPassingAtOrgLevelShouldByPassTriggers() {
         new TestBypassSettingBuilder()
-            .setIsContactAddressBypassed(true)
+            .setIsPlatformEventTriggerBypassed(true)
             .setSetupOwnerId(userInfo.getOrganizationId())
             .buildAndSave();
         Test.StartTest();
-        System.assertEquals(true, ByPassLogicModel.isContactAddressTriggerByPassed(), 'Failed to disable Contact Address Trigger');
+        System.assertEquals(true, ByPassLogicModel.isContactAddressTriggerByPassed(), 'Failed to disable Platform Event Trigger Trigger');
         Test.StopTest();
     }
     
@@ -81,11 +81,11 @@
 */
     static testmethod void byPassingAtProfileLevelShouldByPassTriggers() {
         new TestBypassSettingBuilder()
-            .setIsContactAddressBypassed(true)
+            .setIsPlatformEventTriggerBypassed(true)
             .setSetupOwnerId(userInfo.getProfileId())
             .buildAndSave();
         Test.StartTest();
-        System.assertEquals(true,ByPassLogicModel.isContactAddressTriggerByPassed(),'Failed to disable Contact Address Trigger');
+        System.assertEquals(true,ByPassLogicModel.isContactAddressTriggerByPassed(),'Failed to disable Platform Event Trigger Trigger');
         Test.StopTest();
     }
 }
