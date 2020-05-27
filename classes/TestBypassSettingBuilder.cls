@@ -21,6 +21,16 @@
         this.isContactAddressTriggerBypassed = isContactAddressTriggerBypassed;
         return this;
     }
+
+       /**
+* @description Method to set isPlatformEventTriggerBypassed.
+* @param isPlatformEventTriggerBypassed
+* @return TestBypassSettingBuilder
+*/
+    public TestBypassSettingBuilder setIsPlatformEventTriggerBypassed(Boolean isPlatformEventTriggerBypassed) {
+        this.isPlatformEventTriggerBypassed = isPlatformEventTriggerBypassed;
+        return this;
+    }
     /**
 * @description Method to create Bypass Custom Setting object using fields.
 * @return Bypass_Settings__c
